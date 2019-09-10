@@ -10,13 +10,10 @@
 
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *new, *hold;
+	listint_t *new, *hold = *head;
 	unsigned int i = 0;
 
-	if (!head || !*head || **head)
-		return (NULL);
-	hold = *head;
-	if ((*hold).n > number) /* add to beginning of linked list*/
+	if (!(hold) || (*hold).n > number) /* add to beginning of linked list*/
 	{
 		new = malloc(sizeof(listint_t));
 		if (!new)
