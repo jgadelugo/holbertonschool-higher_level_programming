@@ -8,10 +8,11 @@ if __name__ == "__main__":
     a = int(argv[1])
     b = int(argv[3])
     op = argv[2]
-    ops = {"+":add(a, b),
-        "-":sub(a, b),
-        "*":mul(a, b),
-        "/":div(a, b)}
+    ops = {
+            "+": add(a, b),
+            "-": sub(a, b),
+            "*": mul(a, b),
+            "/": div(a, b)}
     if op in ops.keys():
         print("{:d} {} {:d} = {:d}".format(a, op, b, ops[op]))
     else:
