@@ -15,11 +15,11 @@ def roman_to_int(roman_string):
             key = roman_string[i]
             if i < len(roman_string) - 1:
                 nextR = roman_string[i + 1]
-            if key == "I" and nextR == "V" or nextR == "X":
+            if key == "I" and (nextR == "V" or nextR == "X"):
                 num -= roman_nums[key]
-            elif key == "X" and nextR == "L" or nextR == "C":
+            elif key == "X" and (nextR == "L" or nextR == "C"):
                 num -= roman_nums[key]
-            elif key == "C" and nextR == "D" or nextR == "M":
+            elif key == "C" and (nextR == "D" or nextR == "M"):
                 num -= roman_nums[key]
             else:
                 num += roman_nums[key]
