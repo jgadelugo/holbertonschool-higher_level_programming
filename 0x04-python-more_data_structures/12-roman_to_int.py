@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if not roman_string or roman_string is None:
+    if roman_string is None or len(roman_string) == 0 or type(roman_string) != str:
         return 0
     roman_nums = {"I" : 1,
                 "V" : 5,
