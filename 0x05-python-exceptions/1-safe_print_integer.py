@@ -5,4 +5,3 @@ def safe_print_integer(value):
     except:
         return False
     return True
-
