@@ -6,6 +6,7 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
+        self.__position = position
 
     @property
     def size(self):
@@ -43,7 +44,12 @@ class Square:
         printSize = self.__size
         if printSize == 0:
             print()
-        for i in range(printSize):
-            for j in range(printSize):
-                print("#", end="")
-            print()
+        else:
+            for y in range(self.__position[1]):
+                print()
+            for i in range(printSize):
+                for x in range(self.position[0]):
+                    print(" ", end="")
+                for j in range(printSize):
+                    print("#", end="")
+                print()
