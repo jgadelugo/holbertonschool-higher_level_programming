@@ -8,8 +8,13 @@ def add_integer(a, b=98):
     """
     These comments are stupid
     """
-    if type(a) is not float or type(a) is not int:
-        raise TypeError
-    if type(b) is not float or type(b) is not int:
-        raise TypeError
+    if not (type(a) is float or type(a) is int):
+        raise TypeError("a must be an integer")
+    elif not (type(b) is float or type(b) is int):
+        raise TypeError("b must be an integer")
     return int(a) + int(b)
+
+try:
+    add_integer(4, "school")
+except Exception as e:
+    print(e)
