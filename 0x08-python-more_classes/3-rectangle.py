@@ -57,22 +57,27 @@ class Rectangle:
         """
         method to get area
         """
-        return self.__width * self.__height
+        return self.width * self.height
 
     def perimeter(self):
         """
         method to get perimeter
         """
-        return self.__width * 2 + self.__height * 2
+        if self.width == 0 or self.height == 0:
+            return 0
+        return self.width * 2 + self.height * 2
 
     def __str__(self):
         """
         print rectangle using #
         """
         string = ""
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             string += "\n"
-            return
-        for i in range(self.__height):
-            string += "#" * self.__width + "\n"
-        return string[:-1]
+            return ""
+        else:
+            for i in range(self.height):
+                string += "#" * self.width
+                if i < self.height - 1:
+                    string += "\n"
+            return string
