@@ -12,3 +12,5 @@ class Student:
         self.age = age
 
     def to_json(self):
+        """ return a dict of self """
+        return vars(self)
