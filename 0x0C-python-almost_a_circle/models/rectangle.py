@@ -87,5 +87,14 @@ class Rectangle(Base):
         return self.__height * self.__width
 
     def display(self):
+        for v_shift in range(self.__y):
+            print()
         for height in range(self.__height):
-            print("#" * self.__width)
+            print(" " * self.__x + "#" * self.__width)
+
+    def __str__(self):
+        """ string representation of class """
+        string = "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(type(self).__name__,
+                                                              self.id,self.__x,
+                                                              self.__y, self.__width, self.__height)
+        return string
