@@ -98,3 +98,16 @@ class Rectangle(Base):
                                                               self.id,self.__x,
                                                               self.__y, self.__width, self.__height)
         return string
+
+    def update(self, *args):
+        argCount = len(args)
+        if argCount > 0:
+            super().__init__(args[0])
+        if argCount > 1:
+            self.width = args[1]
+        if argCount > 2:
+            self.height = args[2]
+        if argCount > 3:
+            self.x = args[3]
+        if argCount > 4:
+            self.y = args[4]
