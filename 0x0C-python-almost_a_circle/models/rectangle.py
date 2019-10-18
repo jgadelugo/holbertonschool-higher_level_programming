@@ -99,8 +99,19 @@ class Rectangle(Base):
                                                               self.__y, self.__width, self.__height)
         return string
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         argCount = len(args)
+        if argCount == 0:
+            if "id" in kwargs.keys():
+                super().__init__(kwargs["id"])
+            if "width" in kwargs.keys():
+                self.width = kwargs["width"]
+            if "height" in kwargs.keys():
+                self.height = kwargs["height"]
+            if "x" in kwargs.keys():
+                self.x = kwargs["x"]
+            if "y" in kwargs.keys():
+                self.y = kwargs["y"]
         if argCount > 0:
             super().__init__(args[0])
         if argCount > 1:
