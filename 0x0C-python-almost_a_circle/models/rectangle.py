@@ -49,7 +49,7 @@ class Rectangle(Base):
         """
         returns x value
         """
-        return self.x
+        return self.__x
 
     @x.setter
     def x(self, value):
@@ -67,7 +67,7 @@ class Rectangle(Base):
         """
         returns y value
         """
-        return self.y
+        return self.__y
 
     @y.setter
     def y(self, value):
@@ -94,7 +94,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """ string representation of class """
-        string = "[{:s}] ({:d})".format(self).__name__, self.id)
+        string = "[{:s}] ({:d})".format(type(self).__name__, self.id)
         string += " {:d}/{:d} ".format(self.__x, self.__y)
         string += "- {:d}/{:d}".format(self.__width, self.__height)
         return string
@@ -122,3 +122,9 @@ class Rectangle(Base):
             self.x = args[3]
         if argCount > 4:
             self.y = args[4]
+
+    def to_dictionary(self):
+        dict_rec = {"x" : self.__x, "y" : self.__y, "id" : self.id}
+        dict_rec["width"] = self.__width
+        dict_rec["height"] = self.__height
+        return dict_rec
