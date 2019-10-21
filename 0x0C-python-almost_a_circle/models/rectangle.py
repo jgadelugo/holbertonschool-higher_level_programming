@@ -94,9 +94,9 @@ class Rectangle(Base):
 
     def __str__(self):
         """ string representation of class """
-        string = "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(type(self).__name__,
-                                                              self.id,self.__x,
-                                                              self.__y, self.__width, self.__height)
+        string = "[{:s}] ({:d})".format(self).__name__, self.id)
+        string += " {:d}/{:d} ".format(self.__x, self.__y)
+        string += "- {:d}/{:d}".format(self.__width, self.__height)
         return string
 
     def update(self, *args, **kwargs):
