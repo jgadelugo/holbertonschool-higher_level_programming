@@ -100,6 +100,7 @@ class Rectangle(Base):
         return string
 
     def update(self, *args, **kwargs):
+        """ update class """
         argCount = len(args)
         if argCount == 0:
             if "id" in kwargs.keys():
@@ -124,6 +125,7 @@ class Rectangle(Base):
             self.y = args[4]
 
     def to_dictionary(self):
+        """ to dictionary """
         dict_rec = {"x" : self.__x, "y" : self.__y, "id" : self.id}
         dict_rec["width"] = self.__width
         dict_rec["height"] = self.__height
