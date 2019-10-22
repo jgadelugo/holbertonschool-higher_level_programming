@@ -8,7 +8,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """ initialize """
         super().__init__(size, size, x, y, id)
-        
+
     @property
     def size(self):
         """
@@ -44,7 +44,7 @@ class Square(Rectangle):
             self.x = args[2]
         if argCount > 3:
             self.y = args[3]
-    
+
     def __str__(self):
         """ string representation of class """
         string = "[{:s}] ({:d})".format(type(self).__name__, self.id)
@@ -54,7 +54,6 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """ to dictionary """
-        dict_rec = {"x" : self.x, "y" : self.y, "id" : self.id}
+        dict_rec = {"x": self.x, "y": self.y, "id": self.id}
         dict_rec["size"] = self.size
         return dict_rec
-

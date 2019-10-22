@@ -6,6 +6,7 @@ import json
 class Base:
     """ Base class """
     __nb_objects = 0
+
     def __init__(self, id=None):
         if id is None:
             type(self).__nb_objects += 1
@@ -16,7 +17,7 @@ class Base:
     @staticmethod
     def to_json_string(list_dictionaries):
         """ converts dict to json """
-        if list_dictionaries == None or list_dictionaries == "":
+        if list_dictionaries is None or list_dictionaries == "":
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -32,7 +33,7 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """ returns the list of the JSON string representation """
-        if json_string == None or json_string == "":
+        if json_string is None or json_string == "":
             return []
         return json.loads(json_string)
 

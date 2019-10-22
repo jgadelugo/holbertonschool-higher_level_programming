@@ -126,7 +126,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """ to dictionary """
-        dict_rec = {"x" : self.__x, "y" : self.__y, "id" : self.id}
+        dict_rec = {"x": self.__x, "y": self.__y, "id": self.id}
         dict_rec["width"] = self.__width
         dict_rec["height"] = self.__height
         return dict_rec
