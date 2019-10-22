@@ -13,6 +13,7 @@ class Base:
         else:
             self.id = id
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """ converts dict to json """
         if list_dictionaries == None or list_dictionaries == "":
@@ -27,3 +28,33 @@ class Base:
             LO_dict = [x.to_dictionary() for x in list_objs]
         with open(cls.__name__ + ".json", "w") as f:
             f.write(cls.to_json_string(LO_dict))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ returns the list of the JSON string representation """
+        if json_string == None or json_string == "":
+            return []
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ create an instance of the class and return it """
+        if cls.__name__ == "Rectangle":
+            inst = cls(1, 1, 1, 1)
+        elif cls.__name__ == "Square":
+            inst = cls(1, 1, 1)
+        else:
+            return None
+        inst.update(**dictionary)
+        return inst
+
+    @classmethod
+    def load_from_file(cls):
+        """ returns a list of instances """
+        try:
+            with open(cls.__name__ + ".json", "r") as f:
+                contentRead = f.read()
+        except:
+            return []
+        listOfDicts = cls.from_json_string(contentRead)
+        return [cls.create(**inst) for inst in listOfDicts]
