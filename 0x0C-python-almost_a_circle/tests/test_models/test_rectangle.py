@@ -18,3 +18,10 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r3.id, 15)
         with self.assertRaises(TypeError):
             Rectangle(10, 2, 3, 4, 5, 5)
+
+     def test_pep8(self):
+        """ tests prp8 formating """
+        pep8style = pep8.StyleGuide(quiet=True)
+        result = pep8style.check_files(['models/rectangle.py'])
+        self.assertEqual(result.total_errors, 0,
+                         "Found code style erros (and warnings).")
