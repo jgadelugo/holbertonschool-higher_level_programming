@@ -24,7 +24,7 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError):
             Base(5, 6)
 
-     def test_pep8(self):
+    def test_pep8(self):
         """ tests prp8 formating """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/base.py'])

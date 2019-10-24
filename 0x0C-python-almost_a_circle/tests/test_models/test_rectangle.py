@@ -20,7 +20,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(10, 2, 3, 4, 5, 5)
 
-     def test_pep8(self):
+    def test_pep8(self):
         """ tests prp8 formating """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/rectangle.py'])
