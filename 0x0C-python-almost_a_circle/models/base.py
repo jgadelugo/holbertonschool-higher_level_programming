@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Base class """
 import json
+import turtle
 
 
 class Base:
@@ -59,3 +60,35 @@ class Base:
             return []
         listOfDicts = cls.from_json_string(contentRead)
         return [cls.create(**inst) for inst in listOfDicts]
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """ draw list of rec ands squares """
+        for rec in list_rectangles:
+            rec = rec.to_dictionary()
+            turtle.up()
+            turtle.setx(rec["x"])
+            turtle.sety(rec["y"])
+            turtle.down()
+            turtle.fd(rec["width"])
+            turtle.right(90)
+            turtle.fd(rec["height"])
+            turtle.right(90)
+            turtle.fd(rec["width"])
+            turtle.right(90)
+            turtle.fd(rec["height"])
+        
+        for square in list_squares:
+            size = square["size"]
+            turtle.up()
+            turtle.setx(square["x"])
+            turtle.sety(square["y"])
+            turtle.down()
+            turtle.fd(size)
+            turtle.right(90)
+            turtle.fd(size)
+            turtle.right(90)
+            turtle.fd(size)
+            turtle.right(90)
+            turtle.fd(size)
+            turtle.right(90)
