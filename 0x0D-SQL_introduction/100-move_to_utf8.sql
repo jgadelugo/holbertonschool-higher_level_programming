@@ -1,0 +1,1 @@
+-- script that lists all records with names
