@@ -5,7 +5,7 @@ from sys import argv
 
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
+    if len(argv) < 2:
         data = {"q": ""}
     else:
         data = {"q": argv[1]}
