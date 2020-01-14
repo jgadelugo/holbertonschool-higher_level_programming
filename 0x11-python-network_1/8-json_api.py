@@ -15,7 +15,7 @@ if __name__ == "__main__":
         _json = res.json()
     except ValueError:
         print("Not a valid JSON")
-    if len(_json) == 0 or ("id" and "name") not in _json:
+    if len(_json) < 1 or ("id" and "name") not in _json:
         print("No result")
     else:
         print("[{}] {}".format(_json["id"], _json["name"]))
