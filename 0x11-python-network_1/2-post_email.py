@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Sends a POST request with email and return body """
-import urllib.request
+from urllib import request, parse
 from sys import argv
 
 
