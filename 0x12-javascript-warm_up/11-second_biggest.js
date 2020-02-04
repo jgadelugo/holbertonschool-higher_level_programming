@@ -8,8 +8,10 @@ function secondBiggest (a) {
   let second = parseInt(+a[0]);
   for (const i in a) {
     if (parseInt(+a[i]) >= first) {
-      second = first;
-      first = parseInt(+a[i]);
+      if (parseInt(+a[i]) > first) {
+        second = first;
+        first = parseInt(+a[i]);
+      }
     } else if (parseInt(+a[i]) > second) {
       second = parseInt(+a[i]);
     }
