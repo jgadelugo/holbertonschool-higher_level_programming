@@ -4,14 +4,14 @@ const a = process.argv;
 const size = a.length;
 
 function secondBiggest (a) {
-  let first = a[0];
-  let second = a[0];
+  let first = parseInt(+a[0]);
+  let second = parseInt(+a[0]);
   for (const i in a) {
-    if (a[i] >= first) {
+    if (parseInt(+a[i]) >= first) {
       second = first;
-      first = a[i];
-    } else if (a[i] > second) {
-      second = a[i];
+      first = parseInt(+a[i]);
+    } else if (parseInt(+a[i]) > second) {
+      second = parseInt(+a[i]);
     }
   }
   return second;
