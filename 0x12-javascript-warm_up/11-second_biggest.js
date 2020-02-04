@@ -6,7 +6,7 @@ const size = a.length;
 function secondBiggest (a) {
   const unique = [...new Set(a)];
   if (unique.length < 2) {
-    return 0;
+    return unique[0];
   }
   unique.sort();
   unique.reverse();
