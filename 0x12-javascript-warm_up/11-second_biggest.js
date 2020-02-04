@@ -5,13 +5,14 @@ const size = a.length;
 
 function secondBiggest (a) {
   let first = parseInt(+a[0]);
-  let second = parseInt(+a[0]);
+  let second = parseInt(+a[1]);
   for (const i in a) {
-    if (parseInt(+a[i]) >= first) {
-      if (parseInt(+a[i]) > first) {
-        second = first;
-        first = parseInt(+a[i]);
-      }
+    if (first === second) {
+      second = parseInt(+a[i]);
+    }
+    if (parseInt(+a[i]) > first) {
+      second = first;
+      first = parseInt(+a[i]);
     } else if (parseInt(+a[i]) > second) {
       second = parseInt(+a[i]);
     }
