@@ -8,10 +8,8 @@ function secondBiggest (a) {
   let second = a[0];
   for (const i in a) {
     if (a[i] >= first) {
-      if (a[i] > first) {
-        second = first;
-        first = a[i];
-      }
+      second = first;
+      first = a[i];
     } else if (a[i] > second) {
       second = a[i];
     }
