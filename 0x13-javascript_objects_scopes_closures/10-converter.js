@@ -2,6 +2,6 @@
 
 exports.converter = function (base) {
   return function (x) {
-    return x.toString(base)
-  }
+    return x.toString(base);
+  };
 };
