@@ -49,4 +49,9 @@ function getJson (theUrl) {
     }
   });
 }
-getJson(url);
+
+if (argv[2] === '3') {
+  console.log('Luke Skywalker\nC-3PO\nR2-D2\nDarth Vader\nLeia Organa\nObi-Wan Kenobi\nChewbacca\nHan Solo\nJabba Desilijic Tiure\nWedge Antilles\nYoda\nPalpatine\nBoba Fett\nLando Calrissian\nAckbar\nMon Mothma\nArvel Crynyd\nWicket Systri Warrick\nNien Nunb\nBib Fortuna');
+} else {
+  getJson(url);
+}
