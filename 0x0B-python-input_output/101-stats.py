@@ -12,7 +12,7 @@ if __name__ == "__main__":
               "404": 0,
               "405": 0,
               "500": 0}
-    count = 1
+    count = 0
     file_size = 0
 
     def get_line(line):
@@ -43,4 +43,3 @@ if __name__ == "__main__":
         print_stats()
         raise
     print_stats()
-
