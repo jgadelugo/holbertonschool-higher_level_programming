@@ -31,7 +31,7 @@ if __name__ == "__main__":
     def print_stats():
         """print stats"""
         print("File size: {}".format(file_size))
-        for key in status.keys():
+        for key in sorted(status.keys()):
             if status[key]:
                 print("{}: {}".format(key, status[key]))
 
