@@ -22,8 +22,6 @@ if __name__ == "__main__":
             status_code = parsed_line[-2]
             if status_code in status.keys():
                 status[status_code] += 1
-            else:
-                print("what?")
             return int(parsed_line[-1])
         except Exception:
             return 0
